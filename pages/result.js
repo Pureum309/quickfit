@@ -22,7 +22,6 @@ export default function Result(){
 
     return(
         <>
-            <div>ResultPage</div>
             <div>Hello, {name}</div>
             <div>you need, {calories}</div>
 
