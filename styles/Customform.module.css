@@ -1,0 +1,101 @@
+.cont {
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.form {
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.label {
+    /* margin-top: 1rem; */
+    margin-bottom: 0.2rem;
+    font-weight: bold;
+    width: 100%;
+}
+.inputCont {
+    width: 100%;
+    margin-right: 4em;
+    margin-left: 4em;
+}
+.input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    font-size: 16px;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
+}
+.input:focus, .input:active {
+    outline: none !important;
+    border: 1.5px solid var(--secondary-color);
+    box-shadow: 0 0 1em var(--secondary-color);
+}
+.errorMessage {
+    color: var(--quinary-color);
+    font-size: 13px;
+    margin-top: -20px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+.button {
+    padding: 0.5rem 1rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    margin-top: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    width: 100%;
+
+    position: relative;
+    animation: move 1s ease-in-out infinite alternate;
+}
+/* button kept moving vertically */
+@keyframes move {
+    from {
+      bottom: 0;
+    }
+    to {
+      bottom: 0.5rem;
+    }
+  }
+.button:hover {
+    background-color: var(--quinary-color);
+}
+.result {
+    margin-top: 1rem;
+    text-align: center;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.resultBox {
+    background-color: var(--ternary-color);
+    border: 8px solid var(--quinary-color);
+    border-radius: 5px;
+    padding: 20px;
+}
+.resultLabel {
+    font-weight: bold;
+}
+.resultValue {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0.5rem 0;
+}
