@@ -1,5 +1,6 @@
 import { useRouter } from "next/router"
 import nutrition from '@/data/fastfooddata.json'
+import Image from "next/image";
 
 export default function Result(){
     const r = useRouter();
@@ -30,6 +31,12 @@ export default function Result(){
                     return(
                         <div key={index}>
                             <div>{m.Company}</div>
+                            {m.Company === "Dominos" && <Image src="/logos/dominos.png" width={100} height={100} />}
+                            {m.Company === "McDonalds" && <Image src="/logos/mcdonalds.png" width={100} height={100} />}
+                            {m.Company === "Pizza Hut" && <Image src="/logos/pizzahut.png" width={100} height={100} />}
+                            {m.Company === "Starbucks" && <Image src="/logos/starbucks.png" width={100} height={100} />}
+                            {m.Company === "KFC" && <Image src="/logos/kfc.png" width={100} height={100} />}
+                            {m.Company === "Burger King" && <Image src="/logos/burgerking.png" width={100} height={100} />}
                             <div>{m.Product}</div>
                             <div>{m["Energy (kCal)"]} kCal</div>
                         </div>
