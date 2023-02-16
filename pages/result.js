@@ -7,23 +7,41 @@ export default function Result(){
     const { name, calories } = r.query
 
     //Filter meals based on calories count
-    const filterMeals = nutrition.filter(n => n["Energy (kCal)"] <= calories);
-
-    //Random select 3 meals from the filtered list
+    let filterMeals = nutrition.filter(n => n["Energy (kCal)"] <= calories);
+    
     const selectMeals = [];
+    let totalCalories = selectMeals.reduce((acc, meal) => acc + meal["Energy (kCal)"], 0)
+    //At least 3 meals that add up to a total of 1000 calories
     while (selectMeals.length < 3 && filterMeals.length > 0) {
         const randomIndex = Math.floor(Math.random() * filterMeals.length)
         const meal = filterMeals[randomIndex]
         selectMeals.push(meal);
         filterMeals.splice(randomIndex, 1)
     }
+    //If the totalCalories is less than 1000 or greater than calories
+    if (totalCalories < 1000) {
+        //If totalCalories is less than 1000, add more meals
+        while (totalCalories < 1000 && filterMeals.length > 0) {
+            const randomIndex = Math.floor(Math.random() * filterMeals.length)
+            const meal = filterMeals[randomIndex]
+            selectMeals.push(meal);
+            filterMeals.splice(randomIndex, 1)
+            totalCalories += meal["Energy (kCal)"]
+        }
+        } else if (totalCalories > calories) {
+            //If totalCalories is greater than calories, remove meals
+            while (totalCalories > calories && selectMeals.length > 3) {
+                const meal = selectMeals.pop()
+                filterMeals.push(meal)
+                totalCalories -= meal["Energy (kCal)"]
+            }
+        }
 
-    const totalCalories = selectMeals.reduce((acc, meal) => acc + meal["Energy (kCal)"], 0)
 
     return(
         <>
             <div>Hello, {name}</div>
-            <div>you need, {calories}</div>
+            <div>Your Daily Calories are {Math.ceil(calories)} kCal</div>
 
             {
                 selectMeals.map((m, index) => {
@@ -42,7 +60,7 @@ export default function Result(){
                     )
                 })
             }
-            <div>Total Calories: {totalCalories}</div>
+            <div>Total Calories for your meals: {Math.ceil(totalCalories)} kCal</div>
         </>
     )
 }
