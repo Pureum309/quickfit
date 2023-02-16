@@ -16,8 +16,11 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="images/logo.png" />
       </Head>
-      <Header />
       <main className={styles.main}>
+        <Header />
+        <div className={styles.para}>
+          Quickfit helps people on specific diets navigate fast-food restaurants by providing information on suitable menu items and recommended modifications. It also offers a daily calorie calculator and suggests fast food options that fit your calorie limit.
+        </div>
         <CustomForm />
       </main>
     </>

@@ -56,8 +56,8 @@ export default function CustomForm() {
     return (
         <>
             <div className={styles.cont} >
-                {/* need to add action in form tag */}
                 <form onSubmit={handleSubmit} className={styles.form}>
+                <h2>Daily Calories Calculator</h2>
                     <div className={styles.inputCont}>
                         <div className={styles.label}>
                             <label>Name</label>
@@ -126,7 +126,7 @@ export default function CustomForm() {
                         </div>
                     )}
                     {!submitted && ( // conditionally render the "Submit calculate" button
-                        <button className={styles.button} type="submit">Calculate your calories</button>
+                        <button className={styles.button} type="submit">Calculate Your Calories</button>
                     )}
                 </form>
             </div>
