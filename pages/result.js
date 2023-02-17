@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import styles from '@/styles/Result.module.css'
 import { useRouter } from "next/router"
 import nutrition from '@/data/fastfooddata.json'
@@ -46,33 +47,42 @@ export default function Result(){
     }
 
     return(
-        <div className={styles.cont}>
-            <div className={styles.mainCont}>
-                <Header />
-                <div className={styles.headingCont}>
-                    <button className={styles.backBtn} onClick={handleBack}>Back</button>
-                    <button className={styles.shuffleBtn} onClick={handleRefresh}>Shuffle Again</button>
+        <>
+            <Head>
+                <title>QuickFit Result</title>
+                <meta name="author" content="MDIA 2109_Sarah Sun" />
+                <meta property="og:title" content="Assignment #2 - Result Page" />
+                <meta property="og:description" content="BCIT Digital Design and Development Diploma" />
+                <link rel="icon" href="/images/logo.png" />
+            </Head>
+            <main className={styles.cont}>
+                <div className={styles.mainCont}>
+                    <Header />
+                    <div className={styles.headingCont}>
+                        <button className={styles.backBtn} onClick={handleBack}>Back</button>
+                        <button className={styles.shuffleBtn} onClick={handleRefresh}>Shuffle Again</button>
+                    </div>
+                    <div className={styles.greeting}>{name}, your Daily Calories are {Math.ceil(calories)} kCal</div>
+                    <div className={styles.total}>Calories for Recommended Meals: {Math.ceil(totalCalories)} kCal</div>
+                    <div className={styles.meals}>
+                        {selectMeals.map((m, index) => (
+                            <div className={styles.meal} key={index}>
+                                <div className={styles.company}>{m.Company}</div>
+                                    <div className={styles.logo}>
+                                        {m.Company === "Dominos" && <Image src="/logos/dominos.png" width={100} height={100} />}
+                                        {m.Company === "McDonalds" && <Image src="/logos/mcdonalds.png" width={100} height={100} />}
+                                        {m.Company === "Pizza Hut" && <Image src="/logos/pizzahut.png" width={100} height={100} />}
+                                        {m.Company === "Starbucks" && <Image src="/logos/starbucks.png" width={100} height={100} />}
+                                        {m.Company === "KFC" && <Image src="/logos/kfc.png" width={100} height={100} />}
+                                        {m.Company === "Burger King" && <Image src="/logos/burgerking.png" width={100} height={100} />}
+                                    </div>
+                                <div className={styles.product}>{m.Product}</div>
+                                <div className={styles.energy}>{m["Energy (kCal)"]} kCal</div>
+                            </div>
+                        ))}
+                    </div>
                 </div>
-                <div className={styles.greeting}>{name}, your Daily Calories are {Math.ceil(calories)} kCal</div>
-                <div className={styles.total}>Calories for Recommended Meals: {Math.ceil(totalCalories)} kCal</div>
-                <div className={styles.meals}>
-                    {selectMeals.map((m, index) => (
-                        <div className={styles.meal} key={index}>
-                            <div className={styles.company}>{m.Company}</div>
-                                <div className={styles.logo}>
-                                    {m.Company === "Dominos" && <Image src="/logos/dominos.png" width={100} height={100} />}
-                                    {m.Company === "McDonalds" && <Image src="/logos/mcdonalds.png" width={100} height={100} />}
-                                    {m.Company === "Pizza Hut" && <Image src="/logos/pizzahut.png" width={100} height={100} />}
-                                    {m.Company === "Starbucks" && <Image src="/logos/starbucks.png" width={100} height={100} />}
-                                    {m.Company === "KFC" && <Image src="/logos/kfc.png" width={100} height={100} />}
-                                    {m.Company === "Burger King" && <Image src="/logos/burgerking.png" width={100} height={100} />}
-                                </div>
-                            <div className={styles.product}>{m.Product}</div>
-                            <div className={styles.energy}>{m["Energy (kCal)"]} kCal</div>
-                        </div>
-                    ))}
-                </div>
-            </div>
-        </div>
+            </main>
+        </>
     )
 }
