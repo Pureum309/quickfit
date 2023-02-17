@@ -60,12 +60,12 @@ export default function CustomForm() {
                 <h2>Daily Calories Calculator</h2>
                     <div className={styles.inputCont}>
                         <div className={styles.label}>
-                            <label>Name</label>
+                            Name
                         </div>
                         <input 
                             className={styles.input}
                             type="text" 
-                            placeholder="Name"
+                            placeholder="Enter your name"
                             required
                             value={name}
                             onChange={handleNameChange}
@@ -73,12 +73,12 @@ export default function CustomForm() {
                     </div>
                     <div className={styles.inputCont}>
                         <div className={styles.label}>
-                            <label>Age</label>
-                        </div>              
+                            Age
+                        </div>             
                         <input 
                             className={styles.input}
                             type="text" 
-                            placeholder="Age"
+                            placeholder="Enter your age"
                             required
                             value={age}
                             onChange={handleAgeChange}
@@ -87,12 +87,12 @@ export default function CustomForm() {
                     </div>
                     <div className={styles.inputCont}>
                         <div className={styles.label}>
-                            <label>Weight(kg)</label>
+                            Weight(kg)
                         </div>
                         <input 
                             className={styles.input}
                             type="text" 
-                            placeholder="Weight / Kilogram"
+                            placeholder="Enter your weight in kilograms"
                             required
                             value={weight}
                             onChange={handleWeightChange}
@@ -101,12 +101,12 @@ export default function CustomForm() {
                     </div>
                     <div className={styles.inputCont}>
                         <div className={styles.label}>
-                            <label>Height(cm)</label>
-                        </div> 
+                            Height(cm)
+                        </div>
                         <input 
                             className={styles.input}
                             type="text" 
-                            placeholder="Height / Centimeter"
+                            placeholder="Enter your height in centimeters"
                             required
                             value={height}
                             onChange={handleHeightChange}
@@ -116,7 +116,7 @@ export default function CustomForm() {
                     {submitted && ( // conditionally render the calories and "See your meals" button
                         <div className={styles.result}>
                             <div className={styles.resultBox}>
-                                <div className={styles.resultLabel}>You need daily calories</div>
+                                <div className={styles.resultLabel}>Your Daily Calories are</div>
                                 <div className={styles.resultValue}>{Math.ceil(calories)} kCal</div>
                             </div>
                             <button

@@ -1,0 +1,159 @@
+/* result page */
+.cont {
+    height: 100vh;
+    background-color: #F2F9FF;
+}
+.mainCont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 2em;
+}
+.headingCont {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    position: relative;
+}
+.backBtn, .shuffleBtn {
+    position: absolute;
+    width: 10em;
+    padding: 1em;
+    background-color: var(--quaternary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+} 
+.shuffleBtn {
+    right: 0;
+}
+/* text */
+.greeting, .total {
+    font-size: 1.3em;
+    font-weight: bold;
+    border-radius: 8px;
+    padding: 0.5em;
+    margin-bottom: 0.5rem;
+    color: #fff;
+}
+.greeting {
+    background-color: var(--secondary-color);
+}
+.total {
+    background-color: var(--primary-color);
+    margin-top: auto;
+    margin-bottom: 1rem;
+}
+/* Each card */
+/* meal card cont */
+.meals {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 13em;
+}
+/* Each meal card */
+.meal {
+    width: 15em;
+    margin-bottom: 1em;
+    border: 10px solid var(--quaternary-color);
+    border-radius: 8px;
+    padding: 1em;
+    text-align: center;
+    background-color: var(--ternary-color);
+}
+/* card animation */
+.meal:nth-child(even) {
+    animation: slideInFromRight 2s ease;
+  }
+  
+.meal:nth-child(odd) {
+    animation: slideInFromLeft 2s ease;
+}
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+/* card text */
+.company {
+    font-weight: bold;
+    font-size: 1.3rem;
+    margin-bottom: 0.5em;
+    background-color: var(--ternary-color);
+}  
+.logo {
+    margin-bottom: 0.5em;
+    background-color: var(--ternary-color);
+}
+.product {
+    margin-bottom: 0.5em;
+    background-color: var(--ternary-color);
+}
+.energy {
+    font-weight: bold;
+    background-color: var(--ternary-color);
+}
+/* Media queries */
+/* For mobile phones: */
+@media only screen and (max-width: 767px) {
+    .mainCont {
+        padding: 0 1em;
+    }
+    .headingCont {
+        flex-direction: row;
+        justify-content: space-between;
+        padding-bottom: 0.5em;
+    }
+    .backBtn, .shuffleBtn {
+        position: relative;
+        font-size: 14px;
+    }
+    .shuffleBtn {
+        right: auto;
+    }
+    .meals {
+        padding: 0;
+    }
+    .meal {
+        width: 100%;
+        margin-right: 0;
+    }
+    .greeting, .total {
+        font-size: 0.9em;
+    }
+}
+/* For tablets: */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    .mainCont {
+        padding: 0 1em;
+    }
+    .meals {
+        padding: 1em;
+    }
+    .greeting, .total {
+        font-size: 1.5em;
+    }
+    .greeting {
+        margin-top: 3em;
+    }
+}

@@ -1,36 +1,31 @@
 .cont {
-    /* display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%; */
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .form {
-    background-color: #f9f9f9;
+    background-color: #FFF9E6;
     border-radius: 5px;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
     padding: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    
 }
 .form h2 {
     padding-bottom: 1rem;
     color: var(--primary-color);
+    background-color: #FFF9E6;
 }
 .label {
-    /* margin-top: 1rem; */
-    margin-bottom: 0.2rem;
     font-weight: bold;
-    width: 100%;
+    margin-bottom: 0.2rem;
+    background-color: #FFF9E6;
 }
 .inputCont {
     width: 100%;
-    margin-right: 4em;
-    margin-left: 4em;
+    margin: 0 4em;
+    background-color: #FFF9E6;
 }
 .input {
     width: 100%;
@@ -40,6 +35,7 @@
     margin-bottom: 20px;
     font-size: 16px;
     box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
 }
 .input:focus, .input:active {
     outline: none !important;
@@ -98,9 +94,27 @@
 }
 .resultLabel {
     font-weight: bold;
+    background-color: var(--ternary-color);
 }
 .resultValue {
     font-size: 2rem;
     font-weight: bold;
     margin: 0.5rem 0;
+    background-color: var(--ternary-color);
+}
+/* Media queries */
+/* For mobile phones: */
+@media only screen and (max-width: 767px) {
+    .inputCont {
+        margin: 0 1em;
+    }
+    .form {
+        padding: 1.5rem;
+    }
+}
+/* For tablets: */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    .inputCont {
+        margin: 0 2em;
+    }
 }

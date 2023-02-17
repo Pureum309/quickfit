@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
 
 :root {
-    --primary-color: rgba(249,160,80);
-    --secondary-color: rgba(171,96,49);
-    --ternary-color: rgba(253,232,110);
-    --quaternary-color: rgba(107,221,128);
-    --quinary-color: rgba(240,79,79);
+  --primary-color: rgba(171,96,49);
+  --secondary-color: rgba(249,160,80);
+  --ternary-color: rgba(253,232,110);
+  --quaternary-color: rgba(107,221,128);
+  --quinary-color: rgba(240,79,79);
 }
 
 input[type="number"] {
