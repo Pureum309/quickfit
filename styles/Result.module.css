@@ -28,6 +28,12 @@
     font-size: 16px;
     font-weight: bold;
 } 
+.backBtn:hover, .shuffleBtn:hover {
+    background-color: var(--ternary-color);
+    color: black;
+    padding: calc(1em - 5px);
+    border: 5px solid var(--quaternary-color);
+}
 .shuffleBtn {
     right: 0;
 }

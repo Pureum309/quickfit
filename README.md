@@ -14,6 +14,8 @@ pnpm dev
 https://www.kaggle.com/datasets/rakkesharv/fast-food-joint-nutrition-values-dataset?select=Nutrition_Value_Dataset.csv
 
 ## Programming language used
+- Next.js 13
+- Playwright
 - JavaScript
 - CSS
 
