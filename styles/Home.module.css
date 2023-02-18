@@ -15,8 +15,6 @@
   padding: 0 25%;
   padding-bottom: 2em;
 }
-/* Media queries */
-/* For mobile phones: */
 @media only screen and (max-width: 767px) {
   .para {
     padding: 0 10% 1em;
@@ -32,3 +30,4 @@
     padding: 0 20% 2em;
   }
 }
+

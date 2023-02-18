@@ -120,13 +120,13 @@ export default function CustomForm() {
                                 <div className={styles.resultValue}>{Math.ceil(calories)} kCal</div>
                             </div>
                             <button
-                                className={styles.button} 
+                                className={styles.button} id="button"
                                 onClick={handleMeals}>See your daily meals
                             </button>
                         </div>
                     )}
                     {!submitted && ( // conditionally render the "Submit calculate" button
-                        <button className={styles.button} type="submit">Calculate Your Calories</button>
+                        <button className={styles.button} id="button" type="submit">Calculate Your Calories</button>
                     )}
                 </form>
             </div>
