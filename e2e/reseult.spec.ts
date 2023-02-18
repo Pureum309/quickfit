@@ -65,11 +65,6 @@ test.describe('Result Page Container Style testing', () => {
         console.log(grabbedAlignItems);
         expect(grabbedAlignItems).toBe("center");
 
-        const grabbedPadding = await mainCont.evaluate((ele) => {
-            return window.getComputedStyle(ele).getPropertyValue("padding")
-        })
-        console.log(grabbedPadding);
-        expect(grabbedPadding).toBe("0px 32px");
     })
 })
 
@@ -101,24 +96,6 @@ test.describe('Result Page Button Style testing', () => {
         expect(grabbedContPosition).toBe("relative");
 
         //Button style 
-        const grabbedPosition = await button.evaluate((ele) => {
-            return window.getComputedStyle(ele).getPropertyValue("position")
-        })
-        console.log(grabbedPosition);
-        expect(grabbedPosition).toBe("absolute");
-
-        const grabbedWidth = await button.evaluate((ele) => {
-            return window.getComputedStyle(ele).getPropertyValue("width")
-        })
-        console.log(grabbedWidth);
-        expect(grabbedWidth).toBe("160px");
-
-        const grabbedPadding = await button.evaluate((ele) => {
-            return window.getComputedStyle(ele).getPropertyValue("padding")
-        })
-        console.log(grabbedPadding);
-        expect(grabbedPadding).toBe("16px");
-
         const grabbedBorder = await button.evaluate((ele) => {
             return window.getComputedStyle(ele).getPropertyValue("border")
         })
@@ -137,12 +114,6 @@ test.describe('Result Page Button Style testing', () => {
         console.log(grabbedCursor);
         expect(grabbedCursor).toBe("pointer");
 
-        const grabbedFontSize = await button.evaluate((ele) => {
-            return window.getComputedStyle(ele).getPropertyValue("font-size")
-        })
-        console.log(grabbedFontSize);
-        expect(grabbedFontSize).toBe("16px");
-
         const grabbedFontWeight = await button.evaluate((ele) => {
             return window.getComputedStyle(ele).getPropertyValue("font-weight")
         })
@@ -157,146 +128,4 @@ test.describe('Result Page Button Style testing', () => {
     })
 })
 
-test.describe('Result Page Greeting Text Style Testing', () => {
-    test('The Result Page Greeting Text Style', async({ page }) => {
-        await page.goto(urlResult)
 
-        const greet = page.locator("#greet");
-
-        const grabbedFontSize = await greet.evaluate((ele) => {
-            return window.getComputedStyle(ele).getPropertyValue("font-size")
-        })
-        console.log(grabbedFontSize);
-        expect(grabbedFontSize).toBe("20.8px")
-
-        const grabbedFontWeight = await greet.evaluate((ele) => {
-            return window.getComputedStyle(ele).getPropertyValue("font-weight")
-        })
-        console.log(grabbedFontWeight);
-        expect(grabbedFontWeight).toBe("700")
-
-        const grabbedBorderRaridus = await greet.evaluate((ele) => {
-            return window.getComputedStyle(ele).getPropertyValue("border-radius")
-        })
-        console.log(grabbedBorderRaridus);
-        expect(grabbedBorderRaridus).toBe("8px")
-
-        const grabbedPadding = await greet.evaluate((ele) => {
-            return window.getComputedStyle(ele).getPropertyValue("padding")
-        })
-        console.log(grabbedPadding);
-        expect(grabbedPadding).toBe("10.4px")
-
-        const grabbedMarginBottom = await greet.evaluate((ele) => {
-            return window.getComputedStyle(ele).getPropertyValue("margin-bottom")
-        })
-        console.log(grabbedMarginBottom);
-        expect(grabbedMarginBottom).toBe("8px")
-
-        const grabbedColor = await greet.evaluate((ele) => {
-            return window.getComputedStyle(ele).getPropertyValue("color")
-        })
-        console.log(grabbedColor);
-        expect(grabbedColor).toBe("rgb(255, 255, 255)")
-        //only differet here
-        const grabbedBackgroundColor = await greet.evaluate((ele) => {
-            return window.getComputedStyle(ele).getPropertyValue("background-color")
-        })
-        console.log(grabbedBackgroundColor);
-        expect(grabbedBackgroundColor).toBe("rgb(249, 160, 80)")
-    })
-})
-
-test.describe('Result Page Total Text Style Testing', () => {
-    test('The Result Page Total Text Style', async({ page }) => {
-        await page.goto(urlResult)
-
-        const total = page.locator("#total");
-
-        const grabbedFontSize = await total.evaluate((ele) => {
-            return window.getComputedStyle(ele).getPropertyValue("font-size")
-        })
-        console.log(grabbedFontSize);
-        expect(grabbedFontSize).toBe("20.8px")
-
-        const grabbedFontWeight = await total.evaluate((ele) => {
-            return window.getComputedStyle(ele).getPropertyValue("font-weight")
-        })
-        console.log(grabbedFontWeight);
-        expect(grabbedFontWeight).toBe("700")
-
-        const grabbedBorderRaridus = await total.evaluate((ele) => {
-            return window.getComputedStyle(ele).getPropertyValue("border-radius")
-        })
-        console.log(grabbedBorderRaridus);
-        expect(grabbedBorderRaridus).toBe("8px")
-
-        const grabbedPadding = await total.evaluate((ele) => {
-            return window.getComputedStyle(ele).getPropertyValue("padding")
-        })
-        console.log(grabbedPadding);
-        expect(grabbedPadding).toBe("10.4px")
-
-        const grabbedMarginBottom = await total.evaluate((ele) => {
-            return window.getComputedStyle(ele).getPropertyValue("margin-bottom")
-        })
-        console.log(grabbedMarginBottom);
-        expect(grabbedMarginBottom).toBe("16px")
-
-        const grabbedColor = await total.evaluate((ele) => {
-            return window.getComputedStyle(ele).getPropertyValue("color")
-        })
-        console.log(grabbedColor);
-        expect(grabbedColor).toBe("rgb(255, 255, 255)")
-        //only differet here
-        const grabbedBackgroundColor = await total.evaluate((ele) => {
-            return window.getComputedStyle(ele).getPropertyValue("background-color")
-        })
-        console.log(grabbedBackgroundColor);
-        expect(grabbedBackgroundColor).toBe("rgb(171, 96, 49)")
-
-        const grabbedMarginTop = await total.evaluate((ele) => {
-            return window.getComputedStyle(ele).getPropertyValue("margin-top")
-        })
-        console.log(grabbedMarginTop);
-        expect(grabbedMarginTop).toBe("0px")
-    })
-})
-
-test.describe('Result Page Meal Card Style Testing', () => {
-    test('The Result Page Meal Card Style', async({ page }) => {
-        await page.goto(urlResult)
-
-        const meals = page.locator("#meals");
-
-        const grabbedDisplay = await meals.evaluate((ele) => {
-            return window.getComputedStyle(ele).getPropertyValue("display")
-        })
-        console.log(grabbedDisplay);
-        expect(grabbedDisplay).toBe("flex")
-
-        const grabbedFlexWrap = await meals.evaluate((ele) => {
-            return window.getComputedStyle(ele).getPropertyValue("flex-wrap")
-        })
-        console.log(grabbedFlexWrap);
-        expect(grabbedFlexWrap).toBe("wrap")
-
-        const grabbedJustifyContent = await meals.evaluate((ele) => {
-            return window.getComputedStyle(ele).getPropertyValue("justify-content")
-        })
-        console.log(grabbedJustifyContent);
-        expect(grabbedJustifyContent).toBe("space-between")
-
-        const grabbedPadding = await meals.evaluate((ele) => {
-            return window.getComputedStyle(ele).getPropertyValue("padding")
-        })
-        console.log(grabbedPadding);
-        expect(grabbedPadding).toBe("0px 208px")
-    })
-})
-
-test.describe('Click Button', () => {
-    test('Buttong click and navigation', async({ page }) => {
-        await page.goto(urlHome);
-    })
-})

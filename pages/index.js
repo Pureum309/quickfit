@@ -17,7 +17,7 @@ export default function Home() {
         <meta property="og:description" content="BCIT Digital Design and Development Diploma" />
         <link rel="icon" href="/images/logo.png" />
       </Head>
-      <main className={styles.main}>
+      <main className={styles.main} id="main">
         <Header />
         <div className={styles.para} id="para">
           Quickfit helps people on specific diets navigate fast-food restaurants 

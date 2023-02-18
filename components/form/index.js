@@ -56,7 +56,7 @@ export default function CustomForm() {
     return (
         <>
             <div className={styles.cont} >
-                <form onSubmit={handleSubmit} className={styles.form}>
+                <form onSubmit={handleSubmit} className={styles.form} id="form">
                 <h2>Daily Calories Calculator</h2>
                     <div className={styles.inputCont}>
                         <div className={styles.label}>
